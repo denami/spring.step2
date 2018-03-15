@@ -1,0 +1,46 @@
+group 'edu.spring'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+
+apply plugin: 'war'
+apply from: 'https://raw.github.com/akhikhl/gretty/master/pluginScripts/gretty.plugin'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+gretty {
+    httpPort = 8090
+//    contextPath = '/MyWebApp'
+
+}
+
+ext {
+    springVersion = '5.0.2.RELEASE'
+    hibernateVersion = '4.3.3.Final'
+}
+
+dependencies {
+
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+
+    compile "org.springframework:spring-core:${project.ext.springVersion}"
+    compile "org.springframework:spring-context:${project.ext.springVersion}"
+    compile "org.springframework:spring-beans:${project.ext.springVersion}"
+    compile "org.springframework:spring-web:${project.ext.springVersion}"
+    compile "org.springframework:spring-webmvc:${project.ext.springVersion}"
+
+    compile "org.hibernate:hibernate-core:${project.ext.hibernateVersion}"
+    compile "org.hibernate:hibernate-entitymanager:${project.ext.hibernateVersion}"
+    compile 'com.fasterxml.jackson.core:jackson-databind:2.9.4'
+    compile 'org.codehaus.jackson:jackson-mapper-asl:1.9.13'
+
+    // Use MySQL Connector-J
+    compile 'mysql:mysql-connector-java:5.1.6'
+
+    compile 'me.legrange:mikrotik:3.0.4'
+
+}
