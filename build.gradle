@@ -32,6 +32,9 @@ dependencies {
     compile "org.springframework:spring-web:${project.ext.springVersion}"
     compile "org.springframework:spring-webmvc:${project.ext.springVersion}"
 
+    compile "org.springframework.security:spring-security-config:${project.ext.springVersion}"
+    compile "org.springframework.security:spring-security-web:${project.ext.springVersion}"
+
     compile "org.hibernate:hibernate-core:${project.ext.hibernateVersion}"
     compile "org.hibernate:hibernate-entitymanager:${project.ext.hibernateVersion}"
     compile 'com.fasterxml.jackson.core:jackson-databind:2.9.4'
