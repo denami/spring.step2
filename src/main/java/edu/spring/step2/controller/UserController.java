@@ -20,7 +20,7 @@ public class UserController {
     private UserService userService;
 
     @ResponseBody
-    @RequestMapping(value = "/list", method = RequestMethod.GET)
+    @RequestMapping(value = {"/list", ""}, method = RequestMethod.GET)
     public List<User> getAllUsers() {
         return userService.getAllUsers();
     }
